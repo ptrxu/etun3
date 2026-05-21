@@ -5123,10 +5123,10 @@ async function 生成随机IP(request, count = 16, 指定端口 = -1) {
 		cmcc: 'CF移动优选',
 		cu: 'CF联通优选',
 		ct: 'CF电信优选',
-		cf: 'CF官方优选',
+		cf: 'E7 Transit Node ',
 	};
 	const cidr_url = 运营商文件标识 === 'cf' ? 'https://raw.githubusercontent.com/cmliu/cmliu/main/CF-CIDR.txt' : `https://raw.githubusercontent.com/cmliu/cmliu/main/CF-CIDR/${运营商文件标识}.txt`;
-	const cfname = 运营商名称映射[运营商文件标识] || 'CF官方优选';
+	const cfname = 运营商名称映射[运营商文件标识] || 'E7 Transit Node ';
 	const cfport = [443, 2053, 2083, 2087, 2096, 8443];
 	let cidrList = [];
 	try { const res = await fetch(cidr_url); cidrList = res.ok ? await 整理成数组(await res.text()) : ['104.16.0.0/13'] } catch { cidrList = ['104.16.0.0/13'] }
